@@ -5,7 +5,7 @@ const login = () => import("../views/login.vue");
 const learn = () => import("../views/learn/learn.vue");
 
 const routes = [
-  { path: "/", redirect: "/home" },
+  { path: "/", redirect: "/login" },
   {
     path: "/home",
     name: "home",
