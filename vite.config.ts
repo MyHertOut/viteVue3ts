@@ -12,15 +12,23 @@ export default defineConfig({
       "@": resolve(__dirname, "./src"),
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/global.scss" as *;
+                         @use "@/styles/element.scss" as *;`,
+      }
+    }
+  },
   plugins: [
     vue(),
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'], // 自动导vue和vue-router相关函数
-			eslintrc: {
-				enabled: false,
-				filepath: './.eslintrc-auto-import.json',
-				globalsPropValue: true,
-			},
+      eslintrc: {
+        enabled: false,
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true,
+      },
       resolvers: [ElementPlusResolver()],
     }),
     Components({

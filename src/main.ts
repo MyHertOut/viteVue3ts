@@ -12,7 +12,6 @@ const pinia = createPinia()
 for (const [key, value] of Object.entries(vantDefault)) {
     app.use(value)
 }
-
 app.use(pinia)
 app.use(router)
 app.mount('#app')

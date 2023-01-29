@@ -15,13 +15,7 @@ import en from 'element-plus/dist/locale/en.mjs';
 import { languageStore } from './store/language';
 import { getBrowserLang } from "@/utils/util";
 
-// const lang: any = {
-//   zhCn,
-//   en 
-// }
-
 const language = languageStore();
-// const local = computed(()=> lang[language.language])
 // element 语言配置
 const i18nLocale = computed(() => {
 	if (language.language && language.language == "zh") return zhCn;
