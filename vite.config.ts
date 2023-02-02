@@ -11,6 +11,22 @@ import {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    // 服务器主机名，如果允许外部访问，可设置为 "0.0.0.0"
+    host: "0.0.0.0",
+    port: 8000,
+    open: true,
+    cors: true,
+    // 跨域代理配置
+    proxy: {
+      "/api": {
+        target: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e", // easymock
+        // target: "https://www.fastmock.site/mock/f81e8333c1a9276214bcdbc170d9e0a0", // fastmock
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, "")
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
@@ -19,8 +35,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/styles/global.scss" as *;
-                         @use "@/styles/element/index.scss" as *;`,
+        additionalData: `@use "@/styles/var.scss";`, // @use "@/styles/element/index.scss" as *;
       }
     }
   },
@@ -35,14 +50,14 @@ export default defineConfig({
       },
       resolvers: [ElementPlusResolver({
         // 自动引入修改主题色添加这一行，使用预处理样式，不添加将会导致使用ElMessage，ElNotification等组件时默认的主题色会覆盖自定义的主题色
-        importStyle: "sass",
+        // importStyle: "sass",
       })],
     }),
     Components({
       resolvers: [
         ElementPlusResolver({
           // 自动引入修改主题色添加这一行，使用预处理样式
-          importStyle: "sass",
+          // importStyle: "sass",
         }),
         VantResolver(),
       ],

@@ -1,12 +1,12 @@
 //宇宙特效
-export function animation() {
+export function animation(el: string) {
   // let canvas = <HTMLCanvasElement>document.getElementById('canvas');
-  // let canvas: any = document.getElementById('canvas'); 
-  let canvas = document.getElementById('canvas') as HTMLCanvasElement;
+  // let canvas: any = document.getElementById('canvas');
+  let elment = el;
+  let canvas = document.getElementById(el) as HTMLCanvasElement;
   let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
   let w = (canvas.width = window.innerWidth);
   let h = (canvas.height = window.innerHeight);
-  console.log(w, h)
   let hue = 217;
   let stars: any = [];
   let count = 0;
@@ -28,22 +28,20 @@ export function animation() {
   ctx2.arc(half, half, half, 0, Math.PI * 2);
   ctx2.fill();
 
-  function random(min:any, max?:any) {
+  function random(min: any, max?: any) {
     if (arguments.length < 2) {
       max = min;
       min = 0;
     }
-
     if (min > max) {
       var hold = max;
       max = min;
       min = hold;
     }
-
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function maxOrbit(x:any, y:any) {
+  function maxOrbit(x: any, y: any) {
     var max = Math.max(x, y),
       diameter = Math.round(Math.sqrt(max * max + max * max));
     return diameter / 2;
@@ -103,5 +101,12 @@ export function animation() {
     }
     window.requestAnimationFrame(animation);
   }
+  // window.onresize = () => {
+  //   return (() => {
+  //     canvas.width = window.innerWidth
+  //     canvas.height = window.innerHeight
+  //     // window.requestAnimationFrame(animation);
+  //   })();
+  // };
   animation()
 };
