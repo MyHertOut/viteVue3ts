@@ -5,17 +5,21 @@ import "@/styles/reset.scss";
 import "@/styles/common.scss";
 
 import App from './App.vue'
-import router from './router/index'
+import routers from './routers/index'
 import vantDefault from './vant/vant'
-import { createPinia } from 'pinia'
+
 
 import './style.css'
 
 // element icons
 import * as Icons from "@element-plus/icons-vue";
 
+// pinia store
+import pinia from "@/stores/index";
+
+
 const app = createApp(App);
-const pinia = createPinia()
+
 
 // 全局注册Vant组件
 for (const [key, value] of Object.entries(vantDefault)) {
@@ -27,6 +31,4 @@ Object.keys(Icons).forEach(key => {
 	app.component(key, Icons[key as keyof typeof Icons]);
 });
 
-app.use(pinia)
-app.use(router)
-app.mount('#app')
+app.use(routers).use(pinia).mount('#app')

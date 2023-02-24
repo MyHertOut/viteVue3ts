@@ -49,10 +49,13 @@
 
 <script setup lang="ts" name="LoginForm">
 import { Login } from "@/api/interface";
+import { GlobalStore } from "@/stores";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import type { ElForm } from "element-plus";
+import { HOME_URL } from "@/config/config";
 
 const router = useRouter();
+const globalStore = GlobalStore();
 
 // 定义 formRef（校验规则
 type FormInstance = InstanceType<typeof ElForm>;
@@ -71,7 +74,11 @@ const login = (formEl: FormInstance | undefined) => {
     if (!valid) return;
     loading.value = true;
     try {
-			router.push('/home');
+      globalStore.setToken('defaultToken');
+      globalStore.setweChatUserInfo({
+        userId: "302855"
+      });
+			router.push(HOME_URL);
 			ElNotification({
 				title: '管理员',
 				message: "欢迎登录 Geeker-Admin",

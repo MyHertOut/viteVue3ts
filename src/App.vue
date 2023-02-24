@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import en from 'element-plus/dist/locale/en.mjs';
-import { languageStore } from './store/language';
+import { languageStore } from '@/stores/language';
 import { getBrowserLang } from "@/utils/util";
 
 const language = languageStore();
