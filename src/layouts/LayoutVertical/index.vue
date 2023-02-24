@@ -9,7 +9,7 @@
         </div>
         <el-scrollbar>
           <el-menu
-            :default-active="activeMenu"
+            :default-active="'/home/index'"
             :router="false"
             :collapse="isCollapse"
             :collapse-transition="false"
@@ -31,8 +31,8 @@
 
 <script setup lang="ts" name="layoutVertical">
 import { GlobalStore } from "@/stores";
-import SubMenu from "@/layouts/components/Menu/SubMenu.vue";
 import Main from "@/layouts/components/Main/index.vue";
+import SubMenu from "@/layouts/components/Menu/SubMenu.vue";
 
 const route = useRoute();
 const globalStore = GlobalStore();
@@ -54,6 +54,20 @@ const menuList = computed(() => [
     },
     name: "home",
     path: "/home/index",
+  },
+	{
+    component: "/learn",
+    meta: {
+      icon: "HomeFilled",
+      isAffix: true,
+      isFull: false,
+      isHide: false,
+      isKeepAlive: true,
+      isLink: "",
+      title: "学习",
+    },
+    name: "learn",
+    path: "/learn",
   },
 ]);
 const isCollapse = computed(() => globalStore.themeConfig.isCollapse);

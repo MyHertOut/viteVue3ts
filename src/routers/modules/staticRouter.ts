@@ -38,6 +38,20 @@ export const staticRouter: RouteRecordRaw[] = [
 					title: "首页",
 				},
 			},
+			{
+				path: "/learn",
+				name: "learn",
+				component: () => import("@/views/learn/index.vue"),
+				meta: {
+					icon: "HomeFilled",
+					isAffix: true,
+					isFull: false,
+					isHide: false,
+					isKeepAlive: true,
+					isLink: "",
+					title: "学习",
+				},
+			},
 		]
 	},
 
