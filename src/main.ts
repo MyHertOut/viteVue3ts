@@ -6,6 +6,7 @@ import { setupStore } from '@/stores'
 import "@/styles/reset.scss";
 import "@/styles/common.scss";
 import './style.css'
+import "uno.css";
 
 import vantDefault from './vant/vant'
 import * as Icons from "@element-plus/icons-vue";

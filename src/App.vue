@@ -19,9 +19,9 @@ const language = useAppStore().language;
 console.log(language, 'language')
 // element 语言配置
 const i18nLocale = computed(() => {
-	if (language && language == "zh") return zhCn;
-	if (language == "en") return en;
-	return getBrowserLang() == "zh" ? zhCn : en;
+	if (language && language == "zh-CN") return zhCn;
+	if (language == "en-US") return en;
+	return getBrowserLang() == "zh-CN" ? zhCn : en;
 });
 </script>
 
