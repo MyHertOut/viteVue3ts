@@ -53,7 +53,7 @@ const menuList = computed(() => [
       title: "首页",
     },
     name: "home",
-    path: "/home/index",
+    path: "/home",
     children: []
   },
 	{

@@ -25,7 +25,7 @@ export const staticRouter: RouteRecordRaw[] = [
 		redirect: HOME_URL,
 		children: [
 			{
-				path: "/home/index",
+				path: "/home",
 				name: "home",
 				component: () => import("@/views/home/index.vue"),
 				meta: {
