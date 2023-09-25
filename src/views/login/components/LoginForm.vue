@@ -29,16 +29,17 @@
 </template>
 
 <script setup lang="ts" name="LoginForm">
+import { fetchConfig } from '@/api'
 import { Login } from "@/api/interface";
 import { useAuthStore } from "@/stores";
+import { HOME_URL } from "@/config/config";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import { ElForm, ElNotification } from "element-plus";
-import { HOME_URL } from "@/config/config";
 
 const router = useRouter();
 const authStore = useAuthStore();
 
-// 定义 formRef（校验规则
+// 定义 formRef（校验规则)
 type FormInstance = InstanceType<typeof ElForm>;
 const loginFormRef = ref<FormInstance>();
 const loginRules = reactive({
@@ -55,6 +56,9 @@ const login = (formEl: FormInstance | undefined) => {
     if (!valid) return;
     loading.value = true;
     try {
+      fetchConfig().then((config: any) => {
+        console.log('config:', config)
+      })
       authStore.setToken('defaultToken');
       authStore.setweChatUserInfo({
         userId: "302855"

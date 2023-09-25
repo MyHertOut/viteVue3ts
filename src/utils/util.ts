@@ -6,9 +6,9 @@
 	let browserLang = navigator.language ? navigator.language : navigator.browserLanguage;
 	let defaultBrowserLang = "";
 	if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
-		defaultBrowserLang = "zh";
+		defaultBrowserLang = "zh-CN";
 	} else {
-		defaultBrowserLang = "en";
+		defaultBrowserLang = "en-US";
 	}
 	return defaultBrowserLang;
 }

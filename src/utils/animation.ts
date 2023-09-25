@@ -1,7 +1,4 @@
-//宇宙特效
 export function animation(el: string) {
-  // let canvas = <HTMLCanvasElement>document.getElementById('canvas');
-  // let canvas: any = document.getElementById('canvas');
   let elment = el;
   let canvas = document.getElementById(el) as HTMLCanvasElement;
   let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
@@ -101,12 +98,5 @@ export function animation(el: string) {
     }
     window.requestAnimationFrame(animation);
   }
-  // window.onresize = () => {
-  //   return (() => {
-  //     canvas.width = window.innerWidth
-  //     canvas.height = window.innerHeight
-  //     // window.requestAnimationFrame(animation);
-  //   })();
-  // };
   animation()
 };

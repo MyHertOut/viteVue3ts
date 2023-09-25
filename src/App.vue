@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import en from 'element-plus/dist/locale/en.mjs';
-import { useAppStore } from '@/stores/index';
+import { useAppStore } from '@/stores';
 import { getBrowserLang } from "@/utils/util";
 
 const language = useAppStore().language;
