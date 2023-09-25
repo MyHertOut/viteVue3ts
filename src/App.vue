@@ -12,14 +12,15 @@
 <script setup lang="ts">
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import en from 'element-plus/dist/locale/en.mjs';
-import { languageStore } from '@/stores/language';
+import { GlobalStore } from '@/stores/index';
 import { getBrowserLang } from "@/utils/util";
 
-const language = languageStore();
+const language = GlobalStore().language;
+console.log(language, 'language')
 // element 语言配置
 const i18nLocale = computed(() => {
-	if (language.language && language.language == "zh") return zhCn;
-	if (language.language == "en") return en;
+	if (language && language == "zh") return zhCn;
+	if (language == "en") return en;
 	return getBrowserLang() == "zh" ? zhCn : en;
 });
 </script>
