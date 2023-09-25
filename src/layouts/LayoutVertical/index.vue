@@ -4,8 +4,8 @@
     <el-aside>
       <div class="menu" :style="{ width: isCollapse ? '65px' : '210px' }">
         <div class="logo flx-center">
-          <img src="@/assets/images/logo.svg" alt="logo" />
-          <span v-show="!isCollapse">Mars Admin</span>
+          <div class="i-logos-atomic-icon w-40px h-40px m-r-20px"></div>
+          <span v-show="!isCollapse">智元平台</span>
         </div>
         <el-scrollbar>
           <el-menu

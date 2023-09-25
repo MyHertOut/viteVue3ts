@@ -56,9 +56,9 @@ const login = (formEl: FormInstance | undefined) => {
     if (!valid) return;
     loading.value = true;
     try {
-      fetchConfig().then((config: any) => {
-        console.log('config:', config)
-      })
+      // fetchConfig().then((config: any) => {
+      //   console.log('config:', config)
+      // })
       authStore.setToken('defaultToken');
       authStore.setweChatUserInfo({
         userId: "302855"
@@ -66,7 +66,7 @@ const login = (formEl: FormInstance | undefined) => {
       router.push(HOME_URL);
       ElNotification({
         title: '管理员',
-        message: "欢迎登录 Mars-Admin",
+        message: "欢迎登录 智元平台",
         type: "success",
         duration: 3000
       });

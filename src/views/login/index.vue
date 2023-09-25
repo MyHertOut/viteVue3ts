@@ -5,7 +5,7 @@
     <div class="login-box">
       <div class="login-form">
         <div class="login-logo">
-          <h2 class="logo-text">管理后台</h2>
+          <h2 class="logo-text">智元平台</h2>
         </div>
         <LoginForm />
       </div>
