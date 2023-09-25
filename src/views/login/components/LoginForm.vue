@@ -32,7 +32,7 @@
 import { Login } from "@/api/interface";
 import { GlobalStore } from "@/stores";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
-import type { ElForm } from "element-plus";
+import { ElForm, ElNotification } from "element-plus";
 import { HOME_URL } from "@/config/config";
 
 const router = useRouter();
