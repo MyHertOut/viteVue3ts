@@ -30,12 +30,12 @@
 </template>
 
 <script setup lang="ts" name="layoutVertical">
-import { GlobalStore } from "@/stores";
+import { useAppStore } from "@/stores";
 import Main from "@/layouts/components/Main/index.vue";
 import SubMenu from "@/layouts/components/Menu/SubMenu.vue";
 
 const route = useRoute();
-const globalStore = GlobalStore();
+const appStore = useAppStore();
 const activeMenu = computed(() =>
   route.meta.activeMenu ? route.meta.activeMenu : route.path
 );
@@ -72,7 +72,7 @@ const menuList = computed(() => [
     children: []
   },
 ]);
-const isCollapse = computed(() => globalStore.themeConfig.isCollapse);
+const isCollapse = computed(() => appStore.themeConfig.isCollapse);
 </script>
 
 <style scoped lang="scss">

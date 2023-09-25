@@ -4,15 +4,15 @@
 
 <script setup lang="ts" name="layout">
 import { type Component } from "vue";
-import { GlobalStore } from "@/stores";
+import { useAppStore } from "@/stores";
 import LayoutVertical from "./LayoutVertical/index.vue";
 
 const LayoutComponents: { [key: string]: Component } = {
 	vertical: LayoutVertical,
 };
 
-const globalStore = GlobalStore();
-const themeConfig = computed(() => globalStore.themeConfig);
+const appStore = useAppStore();
+const themeConfig = computed(() => appStore.themeConfig);
 </script>
 
 <style scoped lang="scss">

@@ -1,5 +1,4 @@
 import { RouteRecordRaw } from "vue-router";
-import { GlobalStore } from "@/stores";
 import { HOME_URL, LOGIN_URL } from "@/config/config";
 
 /**

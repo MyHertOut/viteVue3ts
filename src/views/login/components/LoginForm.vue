@@ -30,13 +30,13 @@
 
 <script setup lang="ts" name="LoginForm">
 import { Login } from "@/api/interface";
-import { GlobalStore } from "@/stores";
+import { useAuthStore } from "@/stores";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import { ElForm, ElNotification } from "element-plus";
 import { HOME_URL } from "@/config/config";
 
 const router = useRouter();
-const globalStore = GlobalStore();
+const authStore = useAuthStore();
 
 // 定义 formRef（校验规则
 type FormInstance = InstanceType<typeof ElForm>;
@@ -55,8 +55,8 @@ const login = (formEl: FormInstance | undefined) => {
     if (!valid) return;
     loading.value = true;
     try {
-      globalStore.setToken('defaultToken');
-      globalStore.setweChatUserInfo({
+      authStore.setToken('defaultToken');
+      authStore.setweChatUserInfo({
         userId: "302855"
       });
       router.push(HOME_URL);

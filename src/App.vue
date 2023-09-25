@@ -12,10 +12,10 @@
 <script setup lang="ts">
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import en from 'element-plus/dist/locale/en.mjs';
-import { GlobalStore } from '@/stores/index';
+import { useAppStore } from '@/stores/index';
 import { getBrowserLang } from "@/utils/util";
 
-const language = GlobalStore().language;
+const language = useAppStore().language;
 console.log(language, 'language')
 // element 语言配置
 const i18nLocale = computed(() => {
