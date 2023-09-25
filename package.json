@@ -24,6 +24,10 @@
   "devDependencies": {
     "@types/node": "^17.0.31",
     "@vitejs/plugin-vue": "^3.1.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
     "consola": "^2.15.3",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",

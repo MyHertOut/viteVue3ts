@@ -15,7 +15,7 @@ export default defineConfig({
     // 服务器主机名，如果允许外部访问，可设置为 "0.0.0.0"
     host: "0.0.0.0",
     port: 8000,
-    open: true,
+    open: false,
     cors: true,
     // 跨域代理配置
     proxy: {

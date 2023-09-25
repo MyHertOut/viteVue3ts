@@ -54,6 +54,7 @@ const menuList = computed(() => [
     },
     name: "home",
     path: "/home/index",
+    children: []
   },
 	{
     component: "/learn",
@@ -68,6 +69,7 @@ const menuList = computed(() => [
     },
     name: "learn",
     path: "/learn",
+    children: []
   },
 ]);
 const isCollapse = computed(() => globalStore.themeConfig.isCollapse);
